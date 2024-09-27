@@ -365,18 +365,18 @@ const options = (factory => {
   items: [new ColorConfigOption({
     name: 'light_text',
     title: i18n.getMessage('configLightThemeColor'),
-    default: '#000000',
+    default: '#555',
   }), new ColorConfigOption({
     name: 'light_background',
     title: i18n.getMessage('configLightThemeBackground'),
-    default: '#ffffff',
+    default: '#c0c0c0',
   })],
 }, {
   title: i18n.getMessage('configTextGroupTitle'),
   items: [new FontConfigOption({
     name: 'font_family',
     title: i18n.getMessage('configTextFontFamily'),
-    default: null,
+    default: "Microsoft YaHei",
   }), new SelectConfigOption({
     name: 'font_size',
     title: i18n.getMessage('configTextFontSize'),
@@ -384,7 +384,7 @@ const options = (factory => {
       value: String(n),
       text: i18n.getMessage('configTextFontSizeNum', n),
     })),
-    default: '18',
+    default: '33',
   }), new SelectConfigOption({
     name: 'line_height',
     title: i18n.getMessage('configTextLineHeight'),
@@ -392,7 +392,7 @@ const options = (factory => {
       value: String(n),
       text: i18n.getMessage('configTextLineHeightNum', n),
     })),
-    default: '1.3',
+    default: '1.5',
   }), new SelectConfigOption({
     name: 'paragraph_spacing',
     title: i18n.getMessage('configTextParagraphSpacing'),
@@ -400,7 +400,7 @@ const options = (factory => {
       value: String(n),
       text: i18n.getMessage('configTextParagraphSpacingNum', n),
     })),
-    default: '0.5',
+    default: '0.35',
   }), new TextConfigOption({
     name: 'cjk_lang_tag',
     title: i18n.getMessage('configTextLangTag'),
