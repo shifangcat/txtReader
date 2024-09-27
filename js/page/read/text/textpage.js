@@ -107,15 +107,15 @@ export default class TextPage {
       'line_height' | 'paragraph_spacing'} ReadConfigKey */
     /** @type {{[key in ReadConfigKey]: string }} */
     const keys = {
-      light_text: '#000000',
-      light_background: '#ffffff',
+      light_text: '#555',
+      light_background: '#c0c0c0',
       dark_text: '#ffffff',
       dark_background: '#000000',
-      font_size: '18',
-      font_family: null,
+      font_size: '33',
+      font_family: "Microsoft YaHei",
       font_list: '',
-      line_height: '1.3',
-      paragraph_spacing: '0.5',
+      line_height: '1.5',
+      paragraph_spacing: '0.35',
     };
     /** @type {{ [key in ReadConfigKey]?: string }} */
     const configs = Object.fromEntries(await Promise.all(Object.keys(keys).map(async key => [key, await config.get(key, keys[key])])));
