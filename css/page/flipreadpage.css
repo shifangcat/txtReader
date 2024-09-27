@@ -68,7 +68,7 @@
 
 .read-page-flip .read-body {
   position: absolute;
-  top: var(--page-margin-y);
+  top: 0px;
   bottom: calc(var(--page-margin-y) + 20px);
   left: var(--page-margin-x);
   right: var(--page-margin-x);
