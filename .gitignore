@@ -1,0 +1,35 @@
+# 自定义
+
+# vuepress theme hope
+node_modules/
+
+# 临时、缓存、测试文件
+.cache/
+.temp/
+.tmp/
+.test/
+
+# Java
+.idea/
+*.iml
+lib/
+out/
+*.jar
+*.class
+
+# Python
+__pycache__/
+.Python
+lib/
+lib64/
+
+# Mac
+.DS_Store
+
+# log
+log/
+logs/
+*.log
+
+# 编辑器
+.vscode/
