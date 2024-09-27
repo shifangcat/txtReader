@@ -499,7 +499,7 @@ button.contents-history-clear {
 
 #read_page {
   --page-margin-x: 15px;
-  --page-margin-y: 20px;
+  --page-margin-y: 5px;
 }
 
 @media screen and (min-width: 500px) {

@@ -71,7 +71,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: var(--page-margin-y) var(--page-margin-x) calc(var(--page-margin-y) + 20px);
-  padding: var(--page-margin-y) max(var(--page-margin-x), calc(calc(100% - var(--text-max-width)) / 2)) calc(var(--page-margin-y) + 20px);
+  padding: 0px max(var(--page-margin-x), calc(calc(100% - var(--text-max-width)) / 2)) calc(var(--page-margin-y) + 20px);
   line-height: 1.3;
   white-space: pre-wrap;
   text-align: justify;
