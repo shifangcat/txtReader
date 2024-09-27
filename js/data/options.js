@@ -332,8 +332,8 @@ const options = (factory => {
     name: 'view_mode',
     title: i18n.getMessage('configMode'),
     select: [
-      { value: 'flip', text: i18n.getMessage('configModeFlip') },
       { value: 'scroll', text: i18n.getMessage('configModeScroll') },
+      { value: 'flip', text: i18n.getMessage('configModeFlip') },
     ],
     default: 'scroll',
   })],
