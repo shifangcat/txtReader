@@ -335,7 +335,7 @@ const options = (factory => {
       { value: 'flip', text: i18n.getMessage('configModeFlip') },
       { value: 'scroll', text: i18n.getMessage('configModeScroll') },
     ],
-    default: 'flip',
+    default: 'scroll',
   })],
 }, {
   title: i18n.getMessage('configThemeGroupTitle'),
