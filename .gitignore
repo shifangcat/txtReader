@@ -24,7 +24,7 @@ lib/
 lib64/
 
 # Mac
-.DS_Store
+*.DS_Store
 
 # log
 log/
