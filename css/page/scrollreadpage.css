@@ -20,7 +20,7 @@
   overflow: hidden;
   overflow-wrap: break-word;
   contain: layout;
-  --text-max-width: 800px;
+  --text-max-width: 880px;
 }
 
 .read-page-scroll .read-body-scroll {
