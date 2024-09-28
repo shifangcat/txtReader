@@ -125,7 +125,7 @@
 
 .read-page-scroll .read-meta {
   position: absolute;
-  bottom: calc(var(--page-margin-y) + 5px);
+  bottom: calc(var(--page-margin-y) + 4px);
   left: var(--page-margin-x);
   left: max(var(--page-margin-x), calc(calc(100% - var(--text-max-width)) / 2));
   right: var(--page-margin-x);
