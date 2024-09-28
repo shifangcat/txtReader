@@ -188,7 +188,7 @@ export default class FlipTextPage extends TextPage {
     if (!this.readPage.isTextPageOnTop()) return;
     if (['PageUp', 'ArrowLeft'].includes(event.code)) {
       this.prevPage({ resetSpeech: true, resetRender: false });
-    } else if (['PageDown', 'ArrowRight'].includes(event.code)) {
+    } else if (['PageDown', 'ArrowRight', 'Space'].includes(event.code)) {
       this.nextPage({ resetSpeech: true, resetRender: false });
     } else if (['ArrowUp'].includes(event.code)) {
       this.readPage.showControlPage();

@@ -409,7 +409,7 @@ export default class ScrollTextPage extends TextPage {
   keyboardEvents(event) {
     super.keyboardEvents(event);
     if (!this.readPage.isTextPageOnTop()) return;
-    if (['PageUp', 'PageDown', 'ArrowUp', 'ArrowDown'].includes(event.code)) {
+    if (['PageUp', 'PageDown', 'ArrowUp', 'ArrowDown', 'Space'].includes(event.code)) {
       const direction = ['PageUp', 'ArrowUp'].includes(event.code) ? 'Up' : 'Down';
       // wrap in raf so it may have correct transition effect
       window.requestAnimationFrame(() => {
