@@ -499,7 +499,7 @@ button.contents-history-clear {
 
 #read_page {
   --page-margin-x: 15px;
-  --page-margin-y: 5px;
+  --page-margin-y: 0px;
 }
 
 @media screen and (min-width: 500px) {
@@ -510,7 +510,7 @@ button.contents-history-clear {
 
 @media screen and (min-height: 667px) {
   #read_page {
-    --page-margin-y: 5px;
+    --page-margin-y: 0px;
   }
 }
 
