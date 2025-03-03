@@ -11,8 +11,8 @@ export default {
   locale: 'zh-CN',
   localeName: '中文（简体）',
 
-  title: 'tReader',
-  titleWithName: '{0} - tReader',
+  title: 'txtReader',
+  titleWithName: '{0} - txtReader',
 
   listFilterClear: '取消过滤',
   listSortTitle: '排序',
@@ -54,7 +54,7 @@ export default {
   configWithDetail: '详情',
   configInstallGroupTitle: '安装',
   configInstallButton: '安装网页应用',
-  configInstallGroupDescription: '使用支持 Web 应用的浏览器访问本站，可以允许您将 tReader 安装到您的设备上',
+  configInstallGroupDescription: '使用支持 Web 应用的浏览器访问本站，可以允许您将 txtReader 安装到您的设备上',
   configInstallIosGuide: '在 iOS 系统安装网页应用：使用 Safari 浏览器打开本页；点击“分享”按钮；选择“添加到主屏幕”。',
   configModeGroupTitle: '模式',
   configMode: '阅读模式',
@@ -149,5 +149,5 @@ export default {
 
   readFontFail: '无法打开字体文件\n您的浏览器可能不支持该字体文件类型',
   listImportFail: '读取文本时发生错误\n文本可能使用了不支持的字符编码',
-  storageOpenFail: '无法访问设备的存储\ntReader 需要访问存储以正常工作\n这可能是因为您启用了浏览器的无痕（隐私）模式或您的浏览器版本不受支持',
+  storageOpenFail: '无法访问设备的存储\ntxtReader 需要访问存储以正常工作\n这可能是因为您启用了浏览器的无痕（隐私）模式或您的浏览器版本不受支持',
 };

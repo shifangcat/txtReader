@@ -11,8 +11,8 @@ export default {
   locale: 'zh-TW',
   localeName: '中文（繁體）',
 
-  title: 'tReader',
-  titleWithName: '{0} - tReader',
+  title: 'txtReader',
+  titleWithName: '{0} - txtReader',
 
   listFilterClear: '清除篩選',
   listSortTitle: '排序',
@@ -55,7 +55,7 @@ export default {
   configWithDetail: '詳細資料',
   configInstallGroupTitle: '安裝',
   configInstallButton: '安裝網頁應用程式',
-  configInstallGroupDescription: '如使用支援網頁應用程式的瀏覽器，您將可以在您的裝置上安裝 tReader；安裝後',
+  configInstallGroupDescription: '如使用支援網頁應用程式的瀏覽器，您將可以在您的裝置上安裝 txtReader；安裝後',
   configInstallIosGuide: '在 iOS 作業系統安裝網頁應用程式：使用 Safari 瀏覽器開啟此網頁；點擊“分享”按鈕；選擇“加入主畫面”。',
   configModeGroupTitle: '模式',
   configMode: '閱讀模式',
@@ -150,5 +150,5 @@ export default {
 
   readFontFail: '無法開啟字型檔案\n您的瀏覽器可能不支援該字型檔案格式',
   listImportFail: '匯入文字檔時發生錯誤\n文字檔可能使用了不受支援的字元編碼',
-  storageOpenFail: '無法存取装置的储存空间\ntReader 需要存取儲存空間以正常運作\n這可能是因為您開啟了瀏覽器的無痕（隱私）瀏覽模式或您的瀏覽器版本不受支援',
+  storageOpenFail: '無法存取装置的储存空间\ntxtReader 需要存取儲存空間以正常運作\n這可能是因為您開啟了瀏覽器的無痕（隱私）瀏覽模式或您的瀏覽器版本不受支援',
 };

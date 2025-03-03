@@ -11,8 +11,8 @@ export default {
   locale: 'en',
   localeName: 'English',
 
-  title: 'tReader',
-  titleWithName: '{0} - tReader',
+  title: 'txtReader',
+  titleWithName: '{0} - txtReader',
 
   listFilterClear: 'Clear Search',
   listSortTitle: 'Sort by',
@@ -54,7 +54,7 @@ export default {
   configWithDetail: 'Detail',
   configInstallGroupTitle: 'Install',
   configInstallButton: 'Install Web App',
-  configInstallGroupDescription: 'You may install tReader to your device if you are using a browser with web app support.',
+  configInstallGroupDescription: 'You may install txtReader to your device if you are using a browser with web app support.',
   configInstallIosGuide: 'To install web app on iOS: Use Safari open this page; tap the "Share" button; choose "Add to Home Screen".',
   configModeGroupTitle: 'Mode',
   configMode: 'View Mode',
@@ -149,5 +149,5 @@ export default {
 
   readFontFail: 'Cannot open font file. The file format may not be supported by your browser.',
   listImportFail: 'Something wrong when reading text file. Maybe the encoding is not supported.',
-  storageOpenFail: 'Cannot access device storage.\ntReader cannot work correctly without storage access.\nThis may due to incognito / private mode of browser or unsupported browser version.',
+  storageOpenFail: 'Cannot access device storage.\ntxtReader cannot work correctly without storage access.\nThis may due to incognito / private mode of browser or unsupported browser version.',
 };

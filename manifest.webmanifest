@@ -1,6 +1,6 @@
 {
-  "name": "tReader",
-  "short_name": "tReader",
+  "name": "txtReader",
+  "short_name": "txtReader",
   "description": "A simple but customizable TXT file reader.",
   "categories": [ "books", "productivity" ],
   "icons": [{
