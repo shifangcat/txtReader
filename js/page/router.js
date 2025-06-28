@@ -75,11 +75,12 @@ export default class Router {
     return page;
   }
   setTitle(text, lang) {
-    if (!text) {
-      document.title = i18n.getMessage('title');
-    } else {
-      document.title = i18n.getMessage('titleWithName', text);
-    }
+    // if (!text) {
+    //   document.title = i18n.getMessage('title');
+    // } else {
+    //   document.title = i18n.getMessage('titleWithName', text);
+    // }
+    document.title = 'txtReader';
     const title = document.head.querySelector('title');
     title.lang = lang ?? i18n.getMessage('locale');
   }
