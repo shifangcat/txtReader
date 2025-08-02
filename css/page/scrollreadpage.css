@@ -98,6 +98,7 @@
 .read-page-scroll .read-body p.text-heading {
   font-size: 120%;
   font-weight: bold;
+  text-indent: 0;
 }
 
 .read-page-scroll .trunk {
