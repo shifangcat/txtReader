@@ -79,7 +79,7 @@ export default class ReadPage extends Page {
     /** @type {string} */
     this.langTag = await config.get('cjk_lang_tag', 'und');
     /** @type {'flip' | 'scroll'} */
-    this.renderStyle = await config.get('view_mode', 'flip');
+    this.renderStyle = await config.get('view_mode', 'scroll');
     /** @type {'normal' | 'speech' | 'disable'} */
     this.autoLockConfig = await config.get('auto_lock', 'speech')
 
