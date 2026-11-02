@@ -7,7 +7,6 @@
  * defined by the Mozilla Public License, v. 2.0.
  */
 
-import config from '../../../data/config.js';
 import file from '../../../data/file.js';
 import text from '../../../text/text.js';
 import ReadPage from '../readpage.js';
@@ -30,16 +29,8 @@ export default class ReadIndex {
     if (!Array.isArray(this.index.bookmarks)) {
       this.index.bookmarks = [];
     }
-    this.config = null;
-    Promise.all([
-      // EXPERT_CONFIG Maximum length of line for table of contents
-      config.expert('text.contents_max_length', 'number', 100),
-      // EXPERT_CONFIG Maximum size of table of contents
-      config.expert('text.contents_size_limit', 'number', 5000),
-    ]).then(([maxLength, limit]) => {
-      this.config = { maxLength, limit };
-    });
     this.content = this.readPage.content;
+    this.contentsGeneration = 0;
   }
   writeIndex() {
     file.setIndex(this.index);
@@ -100,19 +91,12 @@ export default class ReadIndex {
   getContentsTemplate() {
     return this.index.content.template;
   }
-  setContents(template) {
-    const content = this.index.content;
-    content.template = template;
-    if (template && this.config) {
-      content.items = text.generateContent(this.content, template, this.config);
-      if (content.items) {
-        content.items.unshift({ title: this.readPage.meta.title, cursor: 0 });
-      } else {
-        content.items = [];
-      }
-    } else {
-      content.items = [];
-    }
+  async setContents(template) {
+    const generation = ++this.contentsGeneration;
+    const content = await text.generateContents(this.content, template, this.readPage.meta.title);
+    if (generation !== this.contentsGeneration) return false;
+    this.index.content = content;
     this.writeIndex();
+    return true;
   }
 }

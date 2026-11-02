@@ -8,8 +8,10 @@
  */
 
 import storage from './storage.js';
+import text from '../text/text.js';
 
 const file = {};
+const DEFAULT_CONTENTS_TEMPLATE = '第*章';
 
 export default file;
 
@@ -21,7 +23,11 @@ file.add = async function ({ title, content }) {
     lastAccessTime: time,
     length: content.length,
   };
-  await storage.files.add(meta, content);
+  const index = {
+    content: await text.generateContents(content, DEFAULT_CONTENTS_TEMPLATE, title),
+    bookmarks: [],
+  };
+  await storage.files.add(meta, content, index);
   return meta;
 };
 

@@ -80,17 +80,17 @@ storage.files = files;
  * @param {ReaderFile} file
  * @returns {Promise<IDBValidKey>}
  */
-files.add = function (meta, content) {
+files.add = function (meta, content, index) {
   return new Promise(async (resolve, reject) => {
     const db = await dbPromise;
-    if (!db) reject();
+    if (!db) return reject();
     const transaction = db.transaction(['content', 'list', 'index'], 'readwrite');
     const addFile = transaction.objectStore('list').add(meta);
     addFile.addEventListener('success', event => {
       const id = meta.id = addFile.result;
       const addContent = transaction.objectStore('content').add(content, id);
       addContent.addEventListener('success', event => {
-        const addIndex = transaction.objectStore('index').add({ id });
+        const addIndex = transaction.objectStore('index').add({ ...index, id });
         addIndex.addEventListener('success', event => { resolve(meta); });
         addIndex.addEventListener('error', event => { reject(addIndex.error); });
       });
@@ -107,7 +107,7 @@ files.add = function (meta, content) {
 files.remove = function (id) {
   return new Promise(async (resolve, reject) => {
     const db = await dbPromise;
-    if (!db) reject();
+    if (!db) return reject();
     const transaction = db.transaction(['content', 'list', 'index'], 'readwrite');
     const deleteFile = transaction.objectStore('list').delete(id);
     deleteFile.addEventListener('success', event => {
@@ -133,7 +133,7 @@ const common = function (type, actionType) {
   return async function (...param) {
     return new Promise(async (resolve, reject) => {
       const db = await dbPromise;
-      if (!db) reject();
+      if (!db) return reject();
       const transaction = db.transaction([type], mode);
       const store = transaction.objectStore(type);
       const request = action(store, ...param);

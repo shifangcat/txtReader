@@ -97,7 +97,7 @@ text.useRegExpForContent = function (template) {
  * @param {string} template
  * @param {{ maxLength: number, limit: number }} details
  */
-text.generateContent = function (article, template, { maxLength, limit }) {
+text.generateContent = async function (article, template, { maxLength, limit }) {
   let matchReg = text.useRegExpForContent(template);
   if (!matchReg) {
     const escape = template.replace(/./g, c => {
@@ -112,24 +112,38 @@ text.generateContent = function (article, template, { maxLength, limit }) {
   /** @type {{ title: string, cursor: number }[]} */
   const content = [];
   let cursor = 0;
-  const limitExceed = article.split('\n').some(line => {
-    let match = false;
-    if (line.length <= maxLength) {
-      if (matchReg.test(line)) {
-        if (content.length > limit) {
-          return true;
-        }
-        content.push({
-          title: line.trim(),
-          cursor,
-        });
-      }
+  let lineCount = 0;
+  while (cursor < article.length) {
+    const lineEnd = article.indexOf('\n', cursor);
+    const end = lineEnd === -1 ? article.length : lineEnd;
+    const line = article.slice(cursor, end);
+    if (line.length <= maxLength && matchReg.test(line)) {
+      if (content.length >= limit) return null;
+      content.push({
+        title: line.trim(),
+        cursor,
+      });
     }
-    cursor += line.length + 1;
-    return false;
-  });
-  if (limitExceed) return null;
+    cursor = end + 1;
+    lineCount++;
+    if (lineCount % 1000 === 0 && cursor < article.length) {
+      await new Promise(resolve => setTimeout(resolve, 0));
+    }
+  }
   return content;
+};
+
+text.generateContents = async function (article, template, title) {
+  const [maxLength, limit] = await Promise.all([
+    config.expert('text.contents_max_length', 'number', 100),
+    config.expert('text.contents_size_limit', 'number', 5000),
+  ]);
+  let items = [];
+  if (template) {
+    items = await text.generateContent(article, template, { maxLength, limit });
+    if (items) items.unshift({ title, cursor: 0 });
+  }
+  return { template, items: items || [] };
 };
 
 const convertLineEnding = function (text) {

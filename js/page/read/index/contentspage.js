@@ -232,10 +232,11 @@ export default class IndexContentsPage extends IndexSubPage {
   createPageButton() {
     return template.iconButton('refresh', i18n.getMessage('buttonContentsRefresh'));
   }
-  refreshContents(input) {
+  async refreshContents(input) {
     const readIndex = this.readPage.readIndex;
     const template = (input == null ? readIndex.getContentsTemplate() : input) || '';
-    readIndex.setContents(template);
+    const updated = await readIndex.setContents(template);
+    if (!updated || this.readPage.readIndex !== readIndex) return;
     this.refreshList();
     this.indexPage.bookmarkPage.refreshList();
     this.readPage.textPage.forceUpdate();
